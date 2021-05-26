@@ -10,4 +10,4 @@ Dati di fantacalcio.
 Dati di mercato.
 ---
 Ma anche di altri siti di scomesse per creare una valida previsione per  per fini fantacalcistici.
-Non sono mai stato un grande fan del calcio, ma mi piace l'idea di battere i miei ex colleghie ed amici, **mettendomi in tasca i loro soldi**.
+Non sono mai stato un grande fan del calcio, ma mi piace l'idea di battere i miei ex colleghi ed amici, **mettendomi in tasca i loro soldi**.
