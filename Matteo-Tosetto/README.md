@@ -1,6 +1,6 @@
 **SportEventsFinder**
 
-*Functionality* = Whit this application anyone can search for a sport event in the city where is he located. After the search the application redirects you to the site that sells tickets for that event.
+*Functionality* = <font size="1"> Whit this application anyone can search for a sport event in the city where is he located. After the search the application redirects you to the site that sells tickets for that event. </font>
 <br>
 *Sports avaible* = 
 1. Football
