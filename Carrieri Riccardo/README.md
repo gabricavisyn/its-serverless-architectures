@@ -1,2 +1,2 @@
 # VR MUSEUM
-### occhiali vr da integrare all'interno dei musei per una ricostruzione virtuale delle rovine storiche
+### * Occhiali vr da integrare nei musei per una ricostruzione virtuale delle rovine storiche
