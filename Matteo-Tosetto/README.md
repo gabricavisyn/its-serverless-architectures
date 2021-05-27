@@ -1,6 +1,7 @@
-                                                                 **SportEventsFinder**
+**SportEventsFinder**
 
 *Functionality* = 
+<br>
 *Sports avaible* = 
 1. Football
 2. Volleyball
