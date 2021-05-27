@@ -1,2 +1,2 @@
 # Farmaci-App 
-Un software per compare prodotti da una fatmacia
+Un software per compare prodotti da una farmacia
