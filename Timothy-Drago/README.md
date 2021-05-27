@@ -1,2 +1,2 @@
-#*"Farmaci-App", 
-un software per compare prodotti da una fatmacia
+# Farmaci-App 
+Un software per compare prodotti da una fatmacia
