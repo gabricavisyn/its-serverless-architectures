@@ -1,5 +1,5 @@
 ## Change Log
-Tutte le modifiche future verranno documentate su questo file.
+Tutte le modifiche future al progetto **BigFootRecruiter** verranno documentate su questo file.
 
 ### [0.1.1] - 2021-05-27
 #### Added 
