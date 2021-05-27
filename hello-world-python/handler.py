@@ -2,10 +2,8 @@ import json
 
 
 def hello(event, context):
-    print("hello world!!!")
-    
     body = {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
+        "message": "Go Serverless v1.0!",
         "input": event
     }
 
