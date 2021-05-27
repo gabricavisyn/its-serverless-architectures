@@ -1,1 +1,3 @@
-serverless config credentials --provider aws --key AKIAVMDT3EANER6BK7EW --secret 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 --profile serverless-admin
+# Comando da lanciare dopo aver creato le credenziali su aws console
+
+serverless config credentials --provider aws --key AKIAQUALCOSA --secret stringasegretaincomprensibile --profile serverless-admin
