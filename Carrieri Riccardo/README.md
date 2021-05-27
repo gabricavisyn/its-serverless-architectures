@@ -1,3 +1,3 @@
-# __VR MUSEUM__  :eyeglasses:
+# __ VR MUSEUM __  :eyeglasses:
 
-### * Occhiali vr da integrare nei musei per una ricostruzione virtuale delle rovine storiche*
+###  __ - __ Occhiali vr da integrare nei musei per una ricostruzione virtuale delle rovine storiche*
