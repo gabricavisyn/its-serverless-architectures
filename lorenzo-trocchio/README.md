@@ -1,2 +1,2 @@
-GPE
-Glory Programmers Entertainment
+# GPE
+*Glory Programmers Entertainment*
