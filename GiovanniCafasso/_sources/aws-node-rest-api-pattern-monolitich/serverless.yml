@@ -11,7 +11,8 @@ provider:
     DYNAMODB_TABLE_TODOS: ${self:service}-${opt:stage, self:provider.stage}
     DYNAMODB_TABLE_TODOS_RICH: ${self:service}-${opt:stage, self:provider.stage}-RICH
   iamRoleStatements:
-    - Effect: Allow
+  #ne faccio 2 perchè ho assegnato un arn diverso tra le 2 tabelle
+    - Effect: Allow       #per la prima entità: DYNAMODB_TABLE_TODOS
       Action:
         - dynamodb:Query
         - dynamodb:Scan
@@ -20,7 +21,7 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_TODOS}"
-    - Effect: Allow
+    - Effect: Allow       #per la seconda entità: DYNAMODB_TABLE_TODOS_RICH
       Action:
         - dynamodb:Query
         - dynamodb:Scan
@@ -30,10 +31,10 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_TODOS_RICH}"  
 
-functions:
-  monolitich-handler:
-    handler: monolitich-handler.handler
-    events:
+functions:  #una sola function
+  monolitich-handler:     #capisco che è monolitich perchè abbiamo tutto in una sola funzione
+    handler: monolitich-handler.handler   #file in cui troverà la funzione definita per ogni verbo (monolitich-handler.js)
+    events:                               #.handler anzichè .js
       - http:
           path: todos
           method: post
@@ -56,7 +57,7 @@ functions:
           cors: true  
 resources:
   Resources:
-    TodosDynamoDbTable:
+    TodosDynamoDbTable:   #primo DB
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
@@ -72,7 +73,7 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE_TODOS}
-    TodosRichDynamoDbTable:
+    TodosRichDynamoDbTable:   #secondo DB
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
