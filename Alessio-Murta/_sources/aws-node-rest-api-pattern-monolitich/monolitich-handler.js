@@ -28,6 +28,20 @@ module.exports.create = (event, context, callback) => {
       updatedAt: timestamp,
     },
   };
+//Definizione della nuova entità (credo/spero/presumo)
+  const richp = {
+    TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
+    Item: {
+      id: uuid.v1(),
+      text: data.text,
+      priority: data.text,
+      checked: false,
+      createdAt: timestamp,
+      updatedAt: timestamp,
+    },
+  };
+
+
 
   // write the todo to the database
   dynamoDb.put(params, (error) => {
@@ -42,6 +56,7 @@ module.exports.create = (event, context, callback) => {
       return;
     }
 
+    
     // create a response
     const response = {
       statusCode: 200,
@@ -79,6 +94,28 @@ module.exports.get = (event, context, callback) => {
       };
       callback(null, response);
     });
+    //fetch todos rich from the database (credo)
+    dynamoDb.get(richp, (error, result) => {
+      // handle potential errors
+      if (error) {
+        console.error(error);
+        callback(null, {
+          statusCode: error.statusCode || 501,
+          headers: { 'Content-Type': 'text/plain' },
+          body: 'Couldn\'t fetch the todo item.',
+        });
+        return;
+      }
+  
+      // create a response
+      const response = {
+        statusCode: 200,
+        body: JSON.stringify(result.Item),
+      };
+      callback(null, response);
+    });
+
+
   };
   
 
@@ -103,6 +140,27 @@ module.exports.get = (event, context, callback) => {
       };
       callback(null, response);
     });
+    //fetch all todos rich from the database
+    dynamoDb.scan(richp, (error, result) => {
+      // handle potential errors
+      if (error) {
+        console.error(error);
+        callback(null, {
+          statusCode: error.statusCode || 501,
+          headers: { 'Content-Type': 'text/plain' },
+          body: 'Couldn\'t fetch the todos.',
+        });
+        return;
+      }
+  
+      // create a response
+      const response = {
+        statusCode: 200,
+        body: JSON.stringify(result.Items),
+      };
+      callback(null, response);
+    });
+
   };
 
 
@@ -137,6 +195,25 @@ module.exports.get = (event, context, callback) => {
       UpdateExpression: 'SET #todo_text = :text, checked = :checked, updatedAt = :updatedAt',
       ReturnValues: 'ALL_NEW',
     };
+
+    const richp = {
+      TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
+      Key: {
+        id: event.pathParameters.id,
+      },
+      ExpressionAttributeNames: {
+        '#todosrich_text': 'text',
+        '#todosrich_priority':'text',
+      },
+      ExpressionAttributeValues: {
+        ':text': data.text,
+        ':checked': data.checked,
+        ':updatedAt': timestamp,
+      },
+      UpdateExpression: 'SET #todosrich = :text, checked = :checked, updatedAt = :updatedAt',
+      ReturnValues: 'ALL_NEW',
+
+    };
   
     // update the todo in the database
     dynamoDb.update(params, (error, result) => {
@@ -149,8 +226,26 @@ module.exports.get = (event, context, callback) => {
           body: 'Couldn\'t fetch the todo item.',
         });
         return;
-      }
-  
+      }       
+      // create a response
+      const response = {
+        statusCode: 200,
+        body: JSON.stringify(result.Attributes),
+      };
+      callback(null, response);
+    });
+    // update the todos_rich in the database
+    dynamoDb.update(richp, (error, result) => {
+      // handle potential errors
+      if (error) {
+        console.error(error);
+        callback(null, {
+          statusCode: error.statusCode || 501,
+          headers: { 'Content-Type': 'text/plain' },
+          body: 'Couldn\'t fetch the todo item.',
+        });
+        return;
+      }       
       // create a response
       const response = {
         statusCode: 200,
@@ -164,6 +259,13 @@ module.exports.get = (event, context, callback) => {
 module.exports.delete = (event, context, callback) => {
     const params = {
       TableName: process.env.DYNAMODB_TABLE_TODOS,
+      Key: {
+        id: event.pathParameters.id,
+      },
+    };
+
+    const richp = {
+      TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
       Key: {
         id: event.pathParameters.id,
       },
@@ -189,6 +291,27 @@ module.exports.delete = (event, context, callback) => {
       };
       callback(null, response);
     });
+
+    dynamoDb.delete(richp, (error) => {
+      // handle potential errors
+      if (error) {
+        console.error(error);
+        callback(null, {
+          statusCode: error.statusCode || 501,
+          headers: { 'Content-Type': 'text/plain' },
+          body: 'Couldn\'t remove the todo item.',
+        });
+        return;
+      }
+  
+      // create a response
+      const response = {
+        statusCode: 204,
+        body: JSON.stringify({}),
+      };
+      callback(null, response);
+    });
+
   };
 
 
