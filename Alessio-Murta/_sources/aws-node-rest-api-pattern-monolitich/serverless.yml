@@ -54,7 +54,7 @@ functions:
           path: todos/{id}
           method: delete
           cors: true  
-          - http:
+      - http:
           path: todosrich
           method: post
           cors: true
