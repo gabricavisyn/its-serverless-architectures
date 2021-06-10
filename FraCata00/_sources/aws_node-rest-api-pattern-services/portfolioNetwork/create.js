@@ -1,6 +1,6 @@
 'use strict';
 
-const uuid = require('uuid');
+const ID = require('ID');
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
@@ -21,15 +21,18 @@ module.exports.create = (event, context, callback) => {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
     Item: {
-      id: uuid.v1(),
-      text: data.text,
-      checked: false,
+      id: ID.v1(),
+      username: data.text,
+      name: data.text,
+      surname: data.text,
+      age: number,
+      admin: true,
       createdAt: timestamp,
       updatedAt: timestamp,
     },
   };
 
-  // write the todo to the database
+  // write the PORTFOLIO'S USER to the database
   dynamoDb.put(params, (error) => {
     // handle potential errors
     if (error) {
@@ -37,7 +40,7 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the todo item.',
+        body: 'Couldn\'t create the portolio.',
       });
       return;
     }
