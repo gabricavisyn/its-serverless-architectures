@@ -114,7 +114,7 @@ module.exports.get = (event, context, callback) => {
   
     // validation
     if (typeof data.text !== 'string' || typeof data.checked !== 'boolean' || typeof data.isRich !== 'boolean') {
-      if(data.isRich == true && typeof data.isRich !== 'double'){
+      if(data.isRich == true && typeof data.price !== 'double'){
       console.error('Validation Failed');
       }
       callback(null, {
