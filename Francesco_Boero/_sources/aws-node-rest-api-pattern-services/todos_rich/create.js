@@ -17,6 +17,15 @@ module.exports.create = (event, context, callback) => {
     });
     return;
   }
+  if (typeof data.price !== 'double') {
+    console.error('Validation Failed');
+    callback(null, {
+      statusCode: 400,
+      headers: { 'Content-Type': 'price/plain' },
+      body: 'Couldn\'t create the todo_rich item.',
+    });
+    return;
+  }
 
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
@@ -24,6 +33,7 @@ module.exports.create = (event, context, callback) => {
       id: uuid.v1(),
       text: data.text,
       checked: false,
+      price: data.price, //AGGIUNTO IL PREZZO
       createdAt: timestamp,
       updatedAt: timestamp,
     },

@@ -30,9 +30,10 @@ module.exports.update = (event, context, callback) => {
     ExpressionAttributeValues: {
       ':text': data.text,
       ':checked': data.checked,
+      ':price': data.price,
       ':updatedAt': timestamp,
     },
-    UpdateExpression: 'SET #todo_rich_text = :text, checked = :checked, updatedAt = :updatedAt',
+    UpdateExpression: 'SET #todo_rich_text = :text, checked = :checked, price = :price, updatedAt = :updatedAt',
     ReturnValues: 'ALL_NEW',
   };
 
