@@ -305,7 +305,7 @@ module.exports.delete = (event, context, callback) => {
   });
 };
 
-
+//funzione che viene eseguita appena viene richiamata la lambda
 module.exports.handler = (event, context, callback) => {
     switch (event.httpMethod) {
         case "POST":
