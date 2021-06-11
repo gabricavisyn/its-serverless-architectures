@@ -228,7 +228,7 @@ module.exports.createTODORICH = (event, context, callback) => {
   }
 
   const params = {
-    TableName: process.env.DYNAMODB_TABLE_TODOS,
+    TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
     Item: {
       id: uuid.v1(),
       text: data.text,
@@ -268,7 +268,7 @@ module.exports.createTODORICH = (event, context, callback) => {
 
 module.exports.getTODORICH = (event, context, callback) => {
     const params = {
-      TableName: process.env.DYNAMODB_TABLE_TODOS,
+      TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
       Key: {
         id: event.pathParameters.id,
       },
@@ -339,7 +339,7 @@ module.exports.getTODORICH = (event, context, callback) => {
     }
   
     const params = {
-      TableName: process.env.DYNAMODB_TABLE_TODOS,
+      TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
       Key: {
         id: event.pathParameters.id,
       },
@@ -380,7 +380,7 @@ module.exports.getTODORICH = (event, context, callback) => {
 
 module.exports.deleteTODORICH = (event, context, callback) => {
     const params = {
-      TableName: process.env.DYNAMODB_TABLE_TODOS,
+      TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
       Key: {
         id: event.pathParameters.id,
       },
