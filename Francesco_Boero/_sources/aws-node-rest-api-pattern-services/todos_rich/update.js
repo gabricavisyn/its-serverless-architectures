@@ -14,29 +14,30 @@ module.exports.update = (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t update the todo item.',
+      body: 'Couldn\'t update the todoRich item.',
     });
     return;
   }
 
   const params = {
-    TableName: process.env.DYN_T_TODOS,
+    TableName: process.env.DYNAMODB_TABLE,
     Key: {
       id: event.pathParameters.id,
     },
     ExpressionAttributeNames: {
-      '#todo_text': 'text',
+      '#todo_rich_text': 'text',
     },
     ExpressionAttributeValues: {
       ':text': data.text,
       ':checked': data.checked,
+      ':price': data.price,
       ':updatedAt': timestamp,
     },
-    UpdateExpression: 'SET #todo_text = :text, checked = :checked, updatedAt = :updatedAt',
+    UpdateExpression: 'SET #todo_rich_text = :text, checked = :checked, price = :price, updatedAt = :updatedAt',
     ReturnValues: 'ALL_NEW',
   };
 
-  // update the todo in the database
+  // update the todoRich in the database
   dynamoDb.update(params, (error, result) => {
     // handle potential errors
     if (error) {
@@ -44,7 +45,7 @@ module.exports.update = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the todo item.',
+        body: 'Couldn\'t fetch the todo_rich item.',
       });
       return;
     }

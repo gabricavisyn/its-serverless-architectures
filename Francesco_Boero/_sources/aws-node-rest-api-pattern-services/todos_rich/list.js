@@ -3,13 +3,12 @@
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
-
+const params = {
+  TableName: process.env.DYNAMODB_TABLE,
+};
 
 module.exports.list = (event, context, callback) => {
-  const params = {
-    TableName: process.env.DYN_T_TODOS,
-  };
-  // fetch all todos from the database
+  // fetch all todosRich from the database
   dynamoDb.scan(params, (error, result) => {
     // handle potential errors
     if (error) {
@@ -17,7 +16,7 @@ module.exports.list = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the todos.',
+        body: 'Couldn\'t fetch the todosRich.',
       });
       return;
     }
