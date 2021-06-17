@@ -1,6 +1,6 @@
 'use strict';
 
-const ID = require('ID');
+const ID = require('uuid');
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const {create : portflioNetworkCreate} = require('./create');
