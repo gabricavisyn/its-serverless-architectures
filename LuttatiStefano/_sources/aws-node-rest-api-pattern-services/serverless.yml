@@ -1,15 +1,15 @@
-service: sls-rest-api-pattern-monolitich
+service: sls-rest-api-pattern-service
 
 frameworkVersion: ">=1.1.0"
 
 provider:
   name: aws
   runtime: nodejs10.x
-  region: us-east-1
+  region: eu-central-1
   profile: serverless-admin
   environment:
     DYN_T_TODOS: ${self:service}-${opt:stage, self:provider.stage}-todos
-    DYN_T_TODO_RICH: ${self:service}-${opt:stage, self:provider.stage}-todo_rich
+    DYN_T_CONTACTS: ${self:service}-${opt:stage, self:provider.stage}-contacts
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -28,11 +28,11 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_TODO_RICH}"  
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_CONTACTS}"  
 
 functions:
-  monolitich-handler:
-    handler: monolitich-handler.handler
+  todosHandler:
+    handler: todos/handler.todoshandler
     events:
       - http:
           path: todos
@@ -44,36 +44,41 @@ functions:
           cors: true
       - http:
           path: todos/{id}
-          method: get 
+          method: get
           cors: true
       - http:
           path: todos/{id}
           method: put
-          cors: true          
+          cors: true
       - http:
           path: todos/{id}
           method: delete
           cors: true
+  contactsHandler:
+    handler: contacts/handler.contactshandler
+    events:
       - http:
-          path: todo_rich
+          path: contacts
           method: post
           cors: true
       - http:
-          path: todo_rich
+          path: contacts
           method: get
           cors: true
       - http:
-          path: todo_rich/{id}
+          path: contacts/{id}
           method: get
           cors: true
       - http:
-          path: todo_rich/{id}
+          path: contacts/{id}
           method: put
           cors: true          
       - http:
-          path: todo_rich/{id}
+          path: contacts/{id}
           method: delete
-          cors: true 
+          cors: true
+
+
 resources:
   Resources:
     TodosDynamoDbTable:
@@ -92,7 +97,7 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYN_T_TODOS}
-    Todo_RichDynamoDbTable:
+    ContactsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
@@ -107,4 +112,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:provider.environment.DYN_T_TODO_RICH}    
+        TableName: ${self:provider.environment.DYN_T_CONTACTS}   

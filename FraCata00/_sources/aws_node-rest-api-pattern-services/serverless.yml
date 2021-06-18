@@ -1,11 +1,11 @@
-service: serverless-rest-api-with-dynamodb
+service: sls-rest-api-pattern-service
 
 frameworkVersion: ">=1.1.0"
 
 provider:
   name: aws
   runtime: nodejs10.x
-  region: us-east-1
+  region: eu-central-1
   profile: serverless-admin
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
@@ -21,41 +21,25 @@ provider:
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 functions:
-  create:
-    handler: portfolioNetwork/create.create
+  todosHandler:
+    handler: portfolioNetwork/handler.portfolioNetworkhandler
     events:
       - http:
           path: portfolioNetwork
           method: post
           cors: true
-
-  list:
-    handler: portfolioNetwork/list.list
-    events:
       - http:
           path: portfolioNetwork
           method: get
           cors: true
-
-  get:
-    handler: portfolioNetwork/get.get
-    events:
       - http:
           path: portfolioNetwork/{id}
           method: get
           cors: true
-
-  update:
-    handler: portfolioNetwork/update.update
-    events:
       - http:
           path: portfolioNetwork/{id}
           method: put
           cors: true
-
-  delete:
-    handler: portfolioNetwork/delete.delete
-    events:
       - http:
           path: portfolioNetwork/{id}
           method: delete

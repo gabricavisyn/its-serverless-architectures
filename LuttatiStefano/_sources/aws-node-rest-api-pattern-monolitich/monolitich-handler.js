@@ -34,7 +34,7 @@ module.exports.create = (event, context, callback) => {
         },
       };
       break;
-    case "/todo_rich":
+    case "/contacts":
       if (typeof data.name !== 'string' || typeof data.email !== 'string') {
         console.error('Validation Failed');
         callback(null, {
@@ -46,7 +46,7 @@ module.exports.create = (event, context, callback) => {
       }
       const { name, email } = data;
       params = {
-        TableName: process.env.DYN_T_TODO_RICH,
+        TableName: process.env.DYN_T_CONTACTS,
         Item: {
           id: uuid.v1(),
           name,
@@ -93,9 +93,9 @@ module.exports.get = (event, context, callback) => {
         },
       };
       break;
-    case "/todo_rich/{id}":
+    case "/contacts/{id}":
       params = {
-        TableName: process.env.DYN_T_TODO_RICH,
+        TableName: process.env.DYN_T_CONTACTS,
         Key: {
           id: event.pathParameters.id,
         },
@@ -136,9 +136,9 @@ module.exports.list = (event, context, callback) => {
         TableName: process.env.DYN_T_TODOS,
       };
       break;
-    case "/todo_rich":
+    case "/contacts":
       params = {
-        TableName: process.env.DYN_T_TODO_RICH
+        TableName: process.env.DYN_T_CONTACTS,
       };
       break;
   }
@@ -203,7 +203,7 @@ module.exports.update = (event, context, callback) => {
         ReturnValues: 'ALL_NEW',
       };
       break;
-    case "/todo_rich/{id}":
+    case "/contacts/{id}":
       // validation
       if (typeof data.name !== 'string' || typeof data.email !== 'string') {
         console.error('Validation Failed');
@@ -216,7 +216,7 @@ module.exports.update = (event, context, callback) => {
       }
 
       params = {
-        TableName: process.env.DYN_T_TODO_RICH,
+        TableName: process.env.DYN_T_CONTACTS,
         Key: {
           id: event.pathParameters.id,
         },
@@ -272,9 +272,9 @@ module.exports.delete = (event, context, callback) => {
         },
       };
       break;
-    case "/todo_rich/{id}":
+    case "/contacts/{id}":
       params = {
-        TableName: process.env.DYN_T_TODO_RICH,
+        TableName: process.env.DYN_T_CONTACTS,
         Key: {
           id: event.pathParameters.id,
         },
