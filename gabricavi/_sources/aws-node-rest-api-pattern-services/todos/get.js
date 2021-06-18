@@ -9,12 +9,8 @@ module.exports.get = (event, context, callback) => {
 <<<<<<< HEAD
     TableName: process.env.DYNAMODB_TABLE,
 =======
-<<<<<<< HEAD
-    TableName: process.env.DYNAMODB_TABLE,
-=======
     TableName: process.env.DYN_T_TODOS,
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
     Key: {
       id: event.pathParameters.id,
     },

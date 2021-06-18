@@ -9,9 +9,6 @@ module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
   if (typeof data.text !== 'string') {
     console.error('Validation Failed');
     callback(null, {
@@ -33,8 +30,6 @@ module.exports.create = (event, context, callback) => {
     },
   };
 
-<<<<<<< HEAD
-=======
 =======
   let params = {
     TableName: "",
@@ -86,7 +81,6 @@ module.exports.create = (event, context, callback) => {
   }
   
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
   // write the todo to the database
   dynamoDb.put(params, (error) => {
     // handle potential errors
@@ -98,12 +92,8 @@ module.exports.create = (event, context, callback) => {
 <<<<<<< HEAD
         body: 'Couldn\'t create the todo item.',
 =======
-<<<<<<< HEAD
-        body: 'Couldn\'t create the todo item.',
-=======
         body: 'Couldn\'t create the resource item.',
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
       });
       return;
     }
@@ -113,12 +103,8 @@ module.exports.create = (event, context, callback) => {
 <<<<<<< HEAD
       statusCode: 200,
 =======
-<<<<<<< HEAD
-      statusCode: 200,
-=======
       statusCode: 201,
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
       body: JSON.stringify(params.Item),
     };
     callback(null, response);
@@ -127,9 +113,6 @@ module.exports.create = (event, context, callback) => {
 
 module.exports.get = (event, context, callback) => {
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
     const params = {
       TableName: process.env.DYNAMODB_TABLE_TODOS,
       Key: {
@@ -269,8 +252,6 @@ module.exports.delete = (event, context, callback) => {
     });
   };
 
-<<<<<<< HEAD
-=======
 =======
   let params = {
     TableName: "",
@@ -496,7 +477,6 @@ module.exports.delete = (event, context, callback) => {
   });
 };
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
 
 module.exports.handler = (event, context, callback) => {
     switch (event.httpMethod) {

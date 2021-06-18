@@ -11,13 +11,9 @@ provider:
 <<<<<<< HEAD
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
 =======
-<<<<<<< HEAD
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
-=======
     DYN_T_TODOS: ${self:service}-${opt:stage, self:provider.stage}-todos
     DYN_T_CONTACTS: ${self:service}-${opt:stage, self:provider.stage}-contacts
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -27,9 +23,6 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-<<<<<<< HEAD
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
-=======
 <<<<<<< HEAD
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 =======
@@ -44,7 +37,6 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_CONTACTS}"  
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
 
 functions:
   todosHandler:
@@ -72,8 +64,6 @@ functions:
           cors: true
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
   contactsHandler:
     handler: contacts/handler.contactshandler
     events:
@@ -98,7 +88,6 @@ functions:
           method: delete
           cors: true
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
 
 resources:
   Resources:
@@ -120,9 +109,6 @@ resources:
 <<<<<<< HEAD
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
 =======
-<<<<<<< HEAD
-        TableName: ${self:provider.environment.DYNAMODB_TABLE}
-=======
         TableName: ${self:provider.environment.DYN_T_TODOS}
     ContactsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
@@ -141,4 +127,3 @@ resources:
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYN_T_CONTACTS}   
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2

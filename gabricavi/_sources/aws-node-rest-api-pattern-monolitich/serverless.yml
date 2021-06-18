@@ -12,14 +12,9 @@ provider:
     DYNAMODB_TABLE_TODOS: ${self:service}-${opt:stage, self:provider.stage}
     DYNAMODB_TABLE_TODOS_RICH: ${self:service}-${opt:stage, self:provider.stage}-RICH
 =======
-<<<<<<< HEAD
-    DYNAMODB_TABLE_TODOS: ${self:service}-${opt:stage, self:provider.stage}
-    DYNAMODB_TABLE_TODOS_RICH: ${self:service}-${opt:stage, self:provider.stage}-RICH
-=======
     DYN_T_TODOS: ${self:service}-${opt:stage, self:provider.stage}-todos
     DYN_T_CONTACTS: ${self:service}-${opt:stage, self:provider.stage}-contacts
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -32,12 +27,8 @@ provider:
 <<<<<<< HEAD
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_TODOS}"
 =======
-<<<<<<< HEAD
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_TODOS}"
-=======
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_TODOS}"
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
     - Effect: Allow
       Action:
         - dynamodb:Query
@@ -74,9 +65,6 @@ functions:
 <<<<<<< HEAD
           cors: true  
 =======
-<<<<<<< HEAD
-          cors: true  
-=======
           cors: true
       - http:
           path: contacts
@@ -99,7 +87,6 @@ functions:
           method: delete
           cors: true 
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
 resources:
   Resources:
     TodosDynamoDbTable:
@@ -121,14 +108,9 @@ resources:
         TableName: ${self:provider.environment.DYNAMODB_TABLE_TODOS}
     TodosRichDynamoDbTable:
 =======
-<<<<<<< HEAD
-        TableName: ${self:provider.environment.DYNAMODB_TABLE_TODOS}
-    TodosRichDynamoDbTable:
-=======
         TableName: ${self:provider.environment.DYN_T_TODOS}
     ContactsDynamoDbTable:
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
@@ -146,9 +128,5 @@ resources:
 <<<<<<< HEAD
         TableName: ${self:provider.environment.DYNAMODB_TABLE_TODOS_RICH}    
 =======
-<<<<<<< HEAD
-        TableName: ${self:provider.environment.DYNAMODB_TABLE_TODOS_RICH}    
-=======
         TableName: ${self:provider.environment.DYN_T_CONTACTS}    
 >>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
->>>>>>> 2342a5022bbd3eecc875717678062f6e7f8d74d2
