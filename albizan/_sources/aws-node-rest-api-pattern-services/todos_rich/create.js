@@ -13,17 +13,13 @@ module.exports.create = (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t create the todo item.',
+      body: 'Couldn\'t create the todo_rich item.',
     });
     return;
   }
 
   const params = {
-<<<<<<< HEAD
-    TableName: process.env.DYNAMODB_TABLE,
-=======
-    TableName: process.env.DYN_T_TODOS,
->>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
+    TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
     Item: {
       id: uuid.v1(),
       text: data.text,
@@ -41,18 +37,14 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the todo item.',
+        body: 'Couldn\'t create the todo rich item.',
       });
       return;
     }
 
     // create a response
     const response = {
-<<<<<<< HEAD
       statusCode: 200,
-=======
-      statusCode: 201,
->>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
       body: JSON.stringify(params.Item),
     };
     callback(null, response);

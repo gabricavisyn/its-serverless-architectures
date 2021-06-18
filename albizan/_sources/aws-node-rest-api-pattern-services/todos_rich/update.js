@@ -20,11 +20,7 @@ module.exports.update = (event, context, callback) => {
   }
 
   const params = {
-<<<<<<< HEAD
-    TableName: process.env.DYNAMODB_TABLE,
-=======
-    TableName: process.env.DYN_T_TODOS,
->>>>>>> de4f989a18eb9909f992a5a39a4c8964f6e25d2b
+    TableName: process.env.DYNAMODB_TABLE_TODOS_RICH,
     Key: {
       id: event.pathParameters.id,
     },
@@ -48,7 +44,7 @@ module.exports.update = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the todo item.',
+        body: 'Couldn\'t fetch the todo rich item.',
       });
       return;
     }
