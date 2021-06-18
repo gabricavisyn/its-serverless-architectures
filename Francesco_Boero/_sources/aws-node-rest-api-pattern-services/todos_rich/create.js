@@ -13,23 +13,33 @@ module.exports.create = (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t create the todo item.',
+      body: 'Couldn\'t create the todo_rich item.',
+    });
+    return;
+  }
+  if (typeof data.price !== 'double') {
+    console.error('Validation Failed');
+    callback(null, {
+      statusCode: 400,
+      headers: { 'Content-Type': 'price/plain' },
+      body: 'Couldn\'t create the todo_rich item.',
     });
     return;
   }
 
   const params = {
-    TableName: process.env.DYN_T_TODOS,
+    TableName: process.env.DYNAMODB_TABLE,
     Item: {
       id: uuid.v1(),
       text: data.text,
       checked: false,
+      price: data.price, //AGGIUNTO IL PREZZO
       createdAt: timestamp,
       updatedAt: timestamp,
     },
   };
 
-  // write the todo to the database
+  // write the todo_rich to the database
   dynamoDb.put(params, (error) => {
     // handle potential errors
     if (error) {
@@ -37,14 +47,14 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the todo item.',
+        body: 'Couldn\'t create the todo_rich item.',
       });
       return;
     }
 
     // create a response
     const response = {
-      statusCode: 201,
+      statusCode: 200,
       body: JSON.stringify(params.Item),
     };
     callback(null, response);
