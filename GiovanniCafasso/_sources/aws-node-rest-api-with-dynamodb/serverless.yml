@@ -22,7 +22,7 @@ provider:
 
 functions:
   create:
-    handler:  
+    handler: todos/create.create
     events:
       - http:
           path: todos
