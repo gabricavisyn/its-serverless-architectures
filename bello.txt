@@ -1,0 +1,694 @@
+[33mcommit dbd49b86729aee590300e347fccf7ef68dbd3d46[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 3c3c7d8 7a424dc
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 18 11:53:13 2021 +0200
+
+    Merge branch 'main' of https://github.com/H-AlessioMurta/its-serverless-architectures
+
+[33mcommit 3c3c7d8078a80364278624435a172e3028958d5b[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 18 11:52:55 2021 +0200
+
+    Modifiche Murta
+
+[33mcommit 7a424dcd8a532f1157b3481f986e29132afdd04a[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 11 09:54:42 2021 +0200
+
+    updati i percorsi del db relativi a torich, _RICH
+
+[33mcommit 94025989580a8aac90e12c32d0a0d774c2d9b85d[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 11 09:31:16 2021 +0200
+
+    Dopo aver visto il codice di Alberto Zanotti ho ristrutturato il codice raddoppiando non dentro i metodi module.exports.creare(etc) ma raddopiando e distingueno il tutto
+
+[33mcommit 89ac486a8594f2a782cf8090b614190c89d04bf2[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Thu Jun 10 12:46:31 2021 +0200
+
+    Modifiche per todosrich pattern a Services
+
+[33mcommit aa475f1cf45871f82859b499ccec0249bcf19331[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Thu Jun 10 12:29:50 2021 +0200
+
+    Added Todos_rich.pdf
+
+[33mcommit abb471885ed0699d693d9aec0baf816e07fff1f6[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Thu Jun 10 11:59:28 2021 +0200
+
+    raddoppiato i metodi della crud per todos_rich
+
+[33mcommit b412f5b4e70c309477d72d3b88b5f4a863855fc0[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Thu Jun 10 11:22:21 2021 +0200
+
+    Update serverless.yml
+
+[33mcommit 267359f6b9aaa273c19fe750f832490e07ea0d2a[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Thu Jun 10 11:21:46 2021 +0200
+
+    Update serverless.yml
+    
+    Aggiunto l'ascolto degli eventi relativi alla seconda entità todosrich, impostando quindi endpoint come il path.
+
+[33mcommit 3e2b1508b2556bbd284a656584269d76bbcbd370[m
+Merge: 3d87a7c 45e4a10
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 4 12:46:54 2021 +0200
+
+    Merge branch 'main' of https://github.com/H-AlessioMurta/its-serverless-architectures
+
+[33mcommit 3d87a7c76b8d92331a133b558ee1f095c3a1d21a[m
+Author: Alessio Murta <a.murta@studenti.local>
+Date:   Fri Jun 4 12:41:24 2021 +0200
+
+    Prova la mia copia
+
+[33mcommit 45e4a10619fa2c8bb44f0bcb444f379cbd5fe746[m
+Merge: 7d66c45 34da42b
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri Jun 4 12:40:21 2021 +0200
+
+    Merge branch 'gabricavisyn:main' into main
+
+[33mcommit 34da42b5c1cb3d44d236ac71a384129411724141[m
+Author: RiccardoCoata <78862035+RiccardoCoata@users.noreply.github.com>
+Date:   Fri Jun 4 12:38:37 2021 +0200
+
+    _sources on Personal Folder (#39)
+    
+    * Aggiunti i due file
+    
+    * Editato il file readme
+    
+    * prova
+    
+    * Cartella sources
+    
+    Co-authored-by: Riccardo Coata <r.coata@studenti.local>
+
+[33mcommit ee1dba05a5dd8515c234c3bab33f1b3819225dff[m
+Author: aleo92 <78862042+aleo92@users.noreply.github.com>
+Date:   Fri Jun 4 12:37:46 2021 +0200
+
+    Compito Alessandro Olivero (#37)
+    
+    * Update .gitignore
+    
+    * Create Cloud_Specialist.php
+    
+    Creazione file php.
+    
+    * Create alessandro-olivero
+    
+    * Delete alessandro-olivero
+    
+    * Create README.md
+    
+    * Create CHANGELOG.MD
+    
+    * enter
+    
+    * enter
+
+[33mcommit 7d66c45348e35be4bea13ffbe1d69566487d99a2[m
+Merge: 1e1a858 dc41f79
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri Jun 4 10:27:06 2021 +0200
+
+    Merge branch 'gabricavisyn:main' into main
+
+[33mcommit dc41f79782d09281d3c2a97b6712b88b37b31051[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Fri Jun 4 00:12:45 2021 +0200
+
+    Added code for lesson 4
+
+[33mcommit 7687bd67a86ffbd01fda989b5cbb1f5fcb953279[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Fri May 28 17:13:50 2021 +0200
+
+    Classroom exercise
+
+[33mcommit 1e1a85889ff3520d8c878046f81884f99916f847[m
+Merge: 6c84718 2bc25ed
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri May 28 10:10:27 2021 +0200
+
+    Merge branch 'gabricavisyn:main' into main
+
+[33mcommit 2bc25ed37f1e1ac2e30a25393545c6648b874726[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Fri May 28 10:09:05 2021 +0200
+
+    Added readme and chnagelog
+
+[33mcommit 6c847185c68b1a57d91ea5d98c368f7217c56b4b[m
+Merge: b1a212b 4e7833c
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri May 28 10:02:49 2021 +0200
+
+    Merge branch 'gabricavisyn:main' into main
+
+[33mcommit 4e7833c263a6201e3e86e4191f92d2a0baaea2fe[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Fri May 28 10:02:21 2021 +0200
+
+    Deleted trash files
+
+[33mcommit e3c29fe3f8dc45107246fb10b7f684110fa128cb[m
+Author: riccardo carrieri <78861996+Rick983@users.noreply.github.com>
+Date:   Fri May 28 10:00:56 2021 +0200
+
+    Creare un directory nel progetto Forkato (Carrieri Riccardo) (#31)
+    
+    * create Cloud_Specialist_Carrieri
+    
+    creare nuovo file
+    
+    * Create README.md
+    
+    * Create CHANGELOG.md
+    
+    * Update CHANGELOG.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Create CHANGELOG.md
+    
+    * Create README.md
+    
+    * Delete Carrieri Riccardo directory
+
+[33mcommit b1a212b864e8fb1d9903b653441699f0b30e5697[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri May 28 09:51:37 2021 +0200
+
+    Update README.MD
+
+[33mcommit 13afd91e9003b6dc9274d2d7322a46df0087c007[m
+Merge: 48f8f6f 2dc425e
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri May 28 09:39:42 2021 +0200
+
+    Merge branch 'gabricavisyn:main' into main
+
+[33mcommit 2dc425e0b1bd7c26b32d7f7de5d3797a7d941ebb[m
+Author: Bobo <39982810+BOBOfra@users.noreply.github.com>
+Date:   Fri May 28 00:29:53 2021 +0200
+
+    BOBOfra project (#35)
+    
+    * Create Cloud_specialist.php
+    
+    Say "hi" to the entire world
+    
+    * BOBOfra commit
+    
+    * Update readme.md
+    
+    * Update changelog.md
+    
+    * Rename changelog.md to CHANGELOG.md
+    
+    * Rename readme.md to README.md
+    
+    Co-authored-by: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+
+[33mcommit 00ac4ac1741aec5a08a5d05c2db218eb286dbaa4[m
+Author: Libra-code <78862538+Libra-code@users.noreply.github.com>
+Date:   Fri May 28 00:27:24 2021 +0200
+
+    Pull request progetto forkato -Luttati (#36)
+    
+    * a
+    
+    * Delete prova
+    
+    * a
+    
+    * Update CHANGELOG.md
+    
+    * Update README.md
+    
+    * Delete ProjectSettings.json
+    
+    E' meglio evitare di aggiungere setting di progetto in un git comune
+    
+    * Delete .vs directory
+    
+    E' meglio evitare di aggiungere setting di progetto in un git comune
+    
+    Co-authored-by: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+
+[33mcommit c7860a1a3658d04e0684701f2ab4aab6fb818379[m
+Author: Giada Russo <78863450+giadar0@users.noreply.github.com>
+Date:   Fri May 28 00:11:15 2021 +0200
+
+    Pull Request Giada Russo (#34)
+    
+    * Create Cloud_Prova.php
+    
+    prova.
+    
+    * Pull request Giada Russo
+
+[33mcommit 9762fac7ac5f16ce125f1b60b471e8198c32f9f5[m
+Author: Tydragon <56740456+Tydragon00@users.noreply.github.com>
+Date:   Fri May 28 00:10:03 2021 +0200
+
+    Pull di Timothy Drago (#33)
+    
+    * test di Timothy
+    
+    * test 2
+    
+    * update Timothy
+    
+    * update Timothy
+    
+    * Update Timothy
+    
+    * Update Timothy
+    
+    * Update Timothy
+    
+    * Update Timothy
+    
+    * Delete .vs directory
+    
+    * Update README.md
+    
+    * Update CHANGELOG.md
+    
+    * Update README.md
+
+[33mcommit 76754aca8ff767042514b48c9fc9a1750c0387aa[m
+Author: ZitoPalmi <78862048+ZitoPalmi@users.noreply.github.com>
+Date:   Fri May 28 00:09:12 2021 +0200
+
+    PROVA  (#32)
+    
+    * Prova
+    
+    * Update CHANGELOG.md
+    
+    * Create Ciao.php
+    
+    Voglio aggiungere questo file al progetto
+    
+    * Add files via upload
+    
+    * Correzione file
+    
+    Co-authored-by: ZitoPalmi <alberto.palmisano@edu.itspiemonte.it>
+    Co-authored-by: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+
+[33mcommit 081250bb908cc75d2dcf7e97235f66869de5e690[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Fri May 28 00:06:02 2021 +0200
+
+    Creata la cartelle con il mio progetto e changelog (#19)
+    
+    * Update .gitignore
+    
+    * Create Cs.php
+    
+    * Create readme.md
+    
+    * Create CHANGELOG.md
+    
+    * Update readme.md
+    
+    * Rename readme.md to README.MD
+
+[33mcommit 8d1a04d32c5ebf44c942e5bb194d50238e66ee9c[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Thu May 27 23:59:45 2021 +0200
+
+    Added examples for lesson 3
+
+[33mcommit d9d245524d5d1a36177b3e015cd66ec342e8f562[m
+Merge: 3672365 c52c2af
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Thu May 27 23:54:31 2021 +0200
+
+    Merge branch 'main' of github.com:gabricavisyn/its-serverless-architectures
+
+[33mcommit 3672365665f568040ba38ee2a28da7a809ca59e4[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Thu May 27 23:54:10 2021 +0200
+
+    Exercise lesson 3
+
+[33mcommit c52c2afe32356d967ed38a105c32847a3a7e70a8[m
+Author: mattiamarteddu <78861974+mattiamarteddu@users.noreply.github.com>
+Date:   Thu May 27 20:23:52 2021 +0200
+
+    Create CHANGELOG.md (#30)
+    
+    * Create CHANGELOG.md
+    
+    * Update CHANGELOG.md
+    
+    * Create README.md
+    
+    * Update README.md
+
+[33mcommit 48f8f6f706e4f47bff4f65fb9bc2a25bd718f30b[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Thu May 27 19:49:15 2021 +0200
+
+    Rename readme.md to README.MD
+
+[33mcommit 7c7081d5fb6f88494e42c5fa2f1598b80150edbc[m
+Merge: 1511602 b309716
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Thu May 27 16:42:34 2021 +0200
+
+    Merge branch 'main' of github.com:gabricavisyn/its-serverless-architectures
+
+[33mcommit 15116025609d5630f5cbb7dbfccb9a8b5a67d64c[m
+Author: Gabriele Cavigiolo <gabriele.cavigiolo@synesthesia.it>
+Date:   Thu May 27 16:42:15 2021 +0200
+
+    Adjustements
+
+[33mcommit b3097162b0559064d15af51811f609b5611dc535[m
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Thu May 27 16:41:23 2021 +0200
+
+    Develop (#29)
+    
+    * Lesson 2 examples
+    
+    * Update README.md (#2)
+    
+    Chnage the title
+    
+    * Added some code
+    
+    Co-authored-by: Gabriele Cavigiolo <gabri.cavi@gmail.com>
+
+[33mcommit ea0e8dd8b36d15afeee32987d60f0f339cb4d64b[m
+Author: RiccardoCoata <78862035+RiccardoCoata@users.noreply.github.com>
+Date:   Thu May 27 15:50:45 2021 +0200
+
+    Coata_Compito (#28)
+    
+    * Aggiunti i due file
+    
+    * Editato il file readme
+    
+    Co-authored-by: Riccardo Coata <r.coata@studenti.local>
+
+[33mcommit ef98decc092ab6acc7a761946c6cdbcb4de4711c[m
+Author: TrocchioLorenzo <56298354+sitolorenzoweb@users.noreply.github.com>
+Date:   Thu May 27 15:45:42 2021 +0200
+
+    Pull Request di Trocchio Lorenzo (#25)
+    
+    * Update README.md
+    
+    * Update .gitignore
+    
+    * Creazione di una directory
+    
+    * Aggiunto stile al README.md
+    
+    * Aggiunto stile al CHANGELOG.md
+
+[33mcommit 65b24bd939b51e914eca87c1b3c5ffec142ec5d7[m
+Author: AleCaste18 <78862004+AleCaste18@users.noreply.github.com>
+Date:   Thu May 27 15:43:24 2021 +0200
+
+    PR Progetto AleCaste18 (#23)
+    
+    * Create README.md
+    
+    * Update README.md
+    
+    * Create CHANGELOG.md
+    
+    * Add files via upload
+    
+    * Update CHANGELOG.md
+    
+    * Update CHANGELOG.md
+
+[33mcommit 94021963fd0afa860c67caaa9ef6c6998ae7d8e4[m
+Author: TosettoMatteo <78862186+TosettoMatteo@users.noreply.github.com>
+Date:   Thu May 27 13:36:35 2021 +0200
+
+    Creare un directory nel progetto Forkato - TosettoMatteo (#24)
+    
+    * Create Cloud_test.php
+    
+    * Create Matteo-Tosetto
+    
+    * Delete Matteo-Tosetto
+    
+    * Create README.md
+    
+    * Create CHANGELOG.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update README.md
+    
+    * Update CHANGELOG.md
+    
+    * Update CHANGELOG.md
+    
+    * Delete Cloud_test.php
+
+[33mcommit 10823444f1461f090feadc4acfa14601f86c6b6a[m
+Author: Gaian-pixel <78237734+Gaian-pixel@users.noreply.github.com>
+Date:   Thu May 27 09:55:09 2021 +0200
+
+    Creare un directory nel progetto Forkato (#21)
+
+[33mcommit ceb622424938dab04e8896face7c1b7b38148737[m
+Author: Giovanni Cafasso <78862089+GiovanniCafasso@users.noreply.github.com>
+Date:   Thu May 27 09:53:06 2021 +0200
+
+    Create GiovanniCafasso folder (#20)
+    
+    * Create prova.php
+    
+    Ho creato un file php
+    
+    * Added GiovanniCafasso folder
+    
+    * Create README.md
+    
+    * Create CHANGELOG.md
+    
+    * Delete prova.php
+
+[33mcommit 2bca4396c42e4e32ee08e82db3aacdaa2fe80ac4[m
+Author: rossellafemia <78868200+rossellafemia@users.noreply.github.com>
+Date:   Thu May 27 09:42:06 2021 +0200
+
+    pull request rossella-femia (#22)
+    
+    * Create Cloud_specialist.php
+    
+    voglio aggiungere questo file al progetto.
+    
+    * Create README.md
+    
+    * Create CHANGELOG.md
+    
+    * Delete rossella-femia directory
+    
+    * enter
+
+[33mcommit cccad73d804dab07aa06b49fd362a0f3dd92a248[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Wed May 26 14:33:00 2021 +0200
+
+    Update readme.md
+
+[33mcommit 7e40b0ddc23ccfa71648f94d858a63b8ca5b8c2c[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Wed May 26 14:29:28 2021 +0200
+
+    Create CHANGELOG.md
+
+[33mcommit 21ee53e7d92e44ce5c4fe1db303e5d95a11c7a57[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Wed May 26 14:26:07 2021 +0200
+
+    Create readme.md
+
+[33mcommit c0fffe24abe287c3ea3a3caeb3ae9238e96cdf2e[m
+Author: Alberto Zanotti <40325391+albizan@users.noreply.github.com>
+Date:   Wed May 26 13:53:31 2021 +0200
+
+    Added albizan folder (#18)
+    
+    * Add Readme
+    
+    * Add Changelog
+
+[33mcommit d644c8cb39af30093efc214f21697a477d0cf8cb[m
+Author: FraCata00 <78490028+FraCata00@users.noreply.github.com>
+Date:   Wed May 26 12:55:07 2021 +0200
+
+    Add PHP code file (#14)
+    
+    * Add PHP code file
+    
+    fix
+    
+    * Upload Folder
+    
+    ASP .NET Core Framework
+
+[33mcommit e8cc2aee7d3122691a33a3931f901ce3596c54a8[m
+Author: mattiamarteddu <78861974+mattiamarteddu@users.noreply.github.com>
+Date:   Tue May 25 10:47:23 2021 +0200
+
+    Update README.md (#8)
+    
+    * Update README.md
+    
+    * Update README.md
+
+[33mcommit a26c015322ee1a9125ec5142f47d4b45e7af2c2a[m
+Author: ZitoPalmi <78862048+ZitoPalmi@users.noreply.github.com>
+Date:   Tue May 25 10:42:07 2021 +0200
+
+    Create Prova (#16)
+    
+    Ciao
+
+[33mcommit 2ef38c22e0fead419d0e8752ec3c8e44f48c56b7[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Tue May 25 10:32:11 2021 +0200
+
+    Create Cs.php
+
+[33mcommit c9aad89a80d98ec649856469d945cd8c974cd8fa[m
+Author: Alessio <78862054+H-AlessioMurta@users.noreply.github.com>
+Date:   Tue May 25 10:24:48 2021 +0200
+
+    Update .gitignore
+
+[33mcommit 5af0a7ac50ede9eb9ab381beb66983f8be1cf1d1[m
+Author: AleCaste18 <78862004+AleCaste18@users.noreply.github.com>
+Date:   Tue May 25 10:13:45 2021 +0200
+
+    Aggiornamento Castellano (#4)
+    
+    Co-authored-by: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+
+[33mcommit 4b4ac16d4b16b5edfaf86ecb621e5f33332f6e83[m
+Merge: 5b383ec 74016c3
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Tue May 25 10:10:02 2021 +0200
+
+    Merge pull request #5 from BOBOfra/patch-1
+    
+    Update README.md
+
+[33mcommit 74016c3e31694d9a6d1075afaef39a064a9b0501[m
+Author: Bobo <39982810+BOBOfra@users.noreply.github.com>
+Date:   Tue May 25 10:06:55 2021 +0200
+
+    Update README.md
+
+[33mcommit 5b383ec764bfadf4dafc025c63b05a0efe64b0cf[m
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Tue May 25 10:01:55 2021 +0200
+
+    Ho creato il file di changelog
+
+[33mcommit 1c7857400a218085684ec5cc380b242623399247[m
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Tue May 25 00:31:28 2021 +0200
+
+    Develop (#3)
+    
+    * Lesson 2 examples
+    
+    * Update README.md (#2)
+    
+    Chnage the title
+    
+    Co-authored-by: Gabriele Cavigiolo <gabri.cavi@gmail.com>
+
+[33mcommit c98d9fab6f7a986d7d0c902b08382fe95767070b[m
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Tue May 25 00:24:47 2021 +0200
+
+    Lesson 2 examples (#1)
+
+[33mcommit 4c89eaf93456479b0db43774ea64f164cd12afda[m
+Author: Gabriele Cavigiolo <61781659+gabricavisyn@users.noreply.github.com>
+Date:   Mon May 24 22:51:40 2021 +0200
+
+    Initial commit
