@@ -75,7 +75,7 @@ functions:
           method: delete
           cors: true  
           
-          
+
 resources:
   Resources:
     TodosDynamoDbTable:

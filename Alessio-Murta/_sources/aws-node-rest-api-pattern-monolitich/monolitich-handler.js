@@ -51,7 +51,9 @@ module.exports.createTODO = (event, context, callback) => {
   });
 };
 
+
 module.exports.getTODO = (event, context, callback) => {
+
     const params = {
       TableName: process.env.DYNAMODB_TABLE_TODOS,
       Key: {
@@ -82,7 +84,9 @@ module.exports.getTODO = (event, context, callback) => {
   };
   
 
+
   module.exports.listTODO = (event, context, callback) => {
+
     // fetch all todos from the database
     dynamoDb.scan(params, (error, result) => {
       // handle potential errors
@@ -106,7 +110,9 @@ module.exports.getTODO = (event, context, callback) => {
   };
 
 
+
   module.exports.updateTODO = (event, context, callback) => {
+
     const timestamp = new Date().getTime();
     const data = JSON.parse(event.body);
   
@@ -139,7 +145,9 @@ module.exports.getTODO = (event, context, callback) => {
     };
   
     // update the todo in the database
+
     dynamoDb.updateTODO(params, (error, result) => {
+
       // handle potential errors
       if (error) {
         console.error(error);
@@ -161,7 +169,9 @@ module.exports.getTODO = (event, context, callback) => {
   };
   
 
+
 module.exports.deleteTODO = (event, context, callback) => {
+
     const params = {
       TableName: process.env.DYNAMODB_TABLE_TODOS,
       Key: {
