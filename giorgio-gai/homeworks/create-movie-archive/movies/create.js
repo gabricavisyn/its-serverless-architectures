@@ -27,6 +27,7 @@ module.exports.create = (event, context, callback) => {
     Item: {
       id: uuid.v1(),
       title,
+      director,
       duration,
       watched: false,
       createdAt: timestamp,

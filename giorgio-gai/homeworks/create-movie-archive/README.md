@@ -28,3 +28,12 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+ENDPOINTS:
+
+- film-collection-manager-dev-get : FUNZIONA
+- film-collection-manager-dev-update : FUNZIONA
+- film-collection-manager-dev-delete : FUNZIONA
+- film-collection-manager-dev-create : NON FUNZIONA
+- film-collection-manager-dev-list : FUNZIONA
+
+

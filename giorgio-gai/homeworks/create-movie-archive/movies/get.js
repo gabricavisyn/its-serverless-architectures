@@ -7,7 +7,7 @@ module.exports.get = (event, context, callback) => {
   const params = {
     TableName: process.env.MOVIES_TABLE,
     Key: {
-      id: event.pathParameters.id,
+      id: event.pathParameters.id
     },
   };
 

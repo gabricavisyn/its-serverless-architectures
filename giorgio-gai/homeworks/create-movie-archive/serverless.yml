@@ -1,7 +1,6 @@
 service: film-collection-manager
 
-frameworkVersion: ">=1.1.0 <2.41.0"
-
+frameworkVersion: "2.43.1"
 provider:
   name: aws
   runtime: nodejs12.x
@@ -33,7 +32,7 @@ functions:
     handler: movies/list.list
     events:
       - http:
-          path: movies
+          path: movies/{id}
           method: get
           cors: true
 
