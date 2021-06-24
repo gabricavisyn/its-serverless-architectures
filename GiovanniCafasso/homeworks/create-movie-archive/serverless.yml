@@ -1,6 +1,6 @@
 service: film-collection-manager
 
-frameworkVersion: ">=1.1.0 <2.41.0"
+frameworkVersion: ">=1.1.0 <=2.43.0"
 
 provider:
   name: aws
