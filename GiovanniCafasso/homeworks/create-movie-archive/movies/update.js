@@ -13,7 +13,7 @@ module.exports.update = (event, context, callback) => {
 
   let validationPass = true;
 
-  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number')) {
+  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number') || (typeof data.director !== 'undefined' && typeof data.director !== 'string')) {
     validationPass = false;
   }
 
@@ -41,6 +41,11 @@ module.exports.update = (event, context, callback) => {
     durationPassed = true;
   }
 
+  let directorPassed = false;
+  if (typeof data.director == 'string') {
+    directorPassed = true;
+  }
+
   const params = {
     TableName: process.env.MOVIES_TABLE,
     Key: {
@@ -65,6 +70,12 @@ module.exports.update = (event, context, callback) => {
     params.ExpressionAttributeValues[':duration'] = data.duration;
     params.ExpressionAttributeNames['#movie_duration'] = 'duration';    
     params.UpdateExpression += ' , #movie_duration = :duration'
+  }
+
+  if (direcotrPassed) {
+    params.ExpressionAttributeValues[':director'] = data.director;
+    params.ExpressionAttributeNames['#movie_director'] = 'director';    
+    params.UpdateExpression += ' , #movie_director = :director'
   }
 
   console.log(params);
