@@ -25,7 +25,7 @@ module.exports.create = (event, context, callback) => {
       username: data.text,
       name: data.text,
       surname: data.text,
-      age: number,
+      age: data.text,
       admin: true,
       createdAt: timestamp,
       updatedAt: timestamp,
@@ -47,7 +47,7 @@ module.exports.create = (event, context, callback) => {
 
     // create a response
     const response = {
-      statusCode: 200,
+      statusCode: 201,
       body: JSON.stringify(params.Item),
     };
     callback(null, response);
