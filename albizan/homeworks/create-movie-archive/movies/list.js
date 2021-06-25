@@ -7,11 +7,25 @@ module.exports.list = (event, context, callback) => {
 
   const queryStringParameters = event.queryStringParameters || {}
   const {director, title} = queryStringParameters;
-  console.log(`Director: ${director}`);
-  console.log(`Title: ${title}`);
+  let filterExpression = "";
+  if(director) {
+    filterExpression += "director = :director";
+    if(title) {
+      filterExpression += " and title = :title";
+    }
+  } else if(title) {
+    filterExpression += "title = :title";
+  }
+  
 
+  // console.log("Espressione di filtro: " + filterExpression);
   const params = {
-    TableName: process.env.MOVIES_TABLE
+    TableName: process.env.MOVIES_TABLE,
+    FilterExpression: filterExpression,
+    ExpressionAttributeValues: { 
+      ':director': director,
+      ':title': title
+    }
   };
 
   // fetch all todos from the database
@@ -27,19 +41,19 @@ module.exports.list = (event, context, callback) => {
       return;
     }
 
-    let moviesList = result.Items;
+    /* let moviesList = result.Items;
 
     if(director) {
       moviesList = moviesList.filter(m => m.director === director);
     }
     if(title) {
       moviesList = moviesList.filter(m => m.title === title);
-    }
+    } */
 
     // create a response
     const response = {
       statusCode: 200,
-      body: JSON.stringify(moviesList),
+      body: JSON.stringify(result.Items),
     };
     callback(null, response);
   });
