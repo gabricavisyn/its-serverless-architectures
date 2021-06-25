@@ -6,7 +6,7 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 module.exports.list = (event, context, callback) => {
 
   const params = {
-    TableName: process.env.MOVIES_TABLE
+    TableName: process.env.MOVIES_TABLE,       
   };
 
   // fetch all todos from the database
@@ -21,6 +21,7 @@ module.exports.list = (event, context, callback) => {
       });
       return;
     }
+
 
     // create a response
     const response = {
