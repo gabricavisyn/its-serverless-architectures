@@ -21,6 +21,10 @@ module.exports.update = (event, context, callback) => {
     validationPass = false;
   }
 
+  if ((typeof data.director !== 'undefined' && typeof data.director !== 'string') || (typeof data.rating !== 'undefined' &&  typeof data.rating !== 'number')) {
+    validationPass = false;
+  }
+
   if (!validationPass) {
     console.error('Validation Failed');
     callback(null, {
@@ -39,6 +43,16 @@ module.exports.update = (event, context, callback) => {
   let durationPassed = false;
   if (typeof data.duration == 'number') {
     durationPassed = true;
+  }
+
+  let directorPassed = false;
+  if (typeof data.director == 'string') {
+    directorPassed = true;
+  }
+
+  let ratingPassed = false;
+  if (typeof data.rating == 'number') {
+    ratingPassed = true;
   }
 
   const params = {
@@ -65,6 +79,18 @@ module.exports.update = (event, context, callback) => {
     params.ExpressionAttributeValues[':duration'] = data.duration;
     params.ExpressionAttributeNames['#movie_duration'] = 'duration';    
     params.UpdateExpression += ' , #movie_duration = :duration'
+  }
+
+  if (directorPassed) {
+    params.ExpressionAttributeValues[':director'] = data.director;
+    params.ExpressionAttributeNames['#movie_director'] = 'director';    
+    params.UpdateExpression += ' , #movie_director = :director'
+  }
+
+  if (ratingPassed) {
+    params.ExpressionAttributeValues[':rating'] = data.rating;
+    params.ExpressionAttributeNames['#movie_rating'] = 'rating';    
+    params.UpdateExpression += ' , #movie_rating = :rating'
   }
 
   console.log(params);
