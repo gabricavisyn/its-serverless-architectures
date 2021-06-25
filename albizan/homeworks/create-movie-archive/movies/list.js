@@ -17,16 +17,21 @@ module.exports.list = (event, context, callback) => {
     filterExpression += "title = :title";
   }
   
-
-  // console.log("Espressione di filtro: " + filterExpression);
   const params = {
-    TableName: process.env.MOVIES_TABLE,
-    FilterExpression: filterExpression,
-    ExpressionAttributeValues: { 
+    TableName: process.env.MOVIES_TABLE
+  };
+
+  
+  // console.log("Espressione di filtro: " + filterExpression);
+  // Se ho almeno un query paramas aggiungo il filtro nella scan
+  if(filterExpression.length) {
+    params["FilterExpression"] = filterExpression;
+    params["ExpressionAttributeValues"] = { 
       ':director': director,
       ':title': title
     }
-  };
+  }
+  
 
   // fetch all todos from the database
   dynamoDb.scan(params, (error, result) => {
