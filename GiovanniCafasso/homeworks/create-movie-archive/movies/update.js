@@ -72,7 +72,7 @@ module.exports.update = (event, context, callback) => {
     params.UpdateExpression += ' , #movie_duration = :duration'
   }
 
-  if (direcotrPassed) {
+  if (directorPassed) {
     params.ExpressionAttributeValues[':director'] = data.director;
     params.ExpressionAttributeNames['#movie_director'] = 'director';    
     params.UpdateExpression += ' , #movie_director = :director'
