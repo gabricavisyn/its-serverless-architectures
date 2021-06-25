@@ -9,6 +9,10 @@ module.exports.list = (event, context, callback) => {
     TableName: process.env.MOVIES_TABLE
   };
 
+  //prova mia
+  //const request = event.queryStringParams;
+  //console.log("prova request: "+request);
+
   // fetch all todos from the database
   dynamoDb.scan(params, (error, result) => {
     // handle potential errors
