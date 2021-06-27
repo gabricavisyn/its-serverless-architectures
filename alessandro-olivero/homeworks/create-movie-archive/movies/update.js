@@ -13,7 +13,7 @@ module.exports.update = (event, context, callback) => {
 
   let validationPass = true;
 
-  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number')) {
+  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.director !== 'undefined' && typeof data.director !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number')) {
     validationPass = false;
   }
 
@@ -40,7 +40,10 @@ module.exports.update = (event, context, callback) => {
   if (typeof data.duration == 'number') {
     durationPassed = true;
   }
-
+  let directorPassed = false;
+  if (typeof data.director == 'string') {
+    titlePassed = true;
+  }
   const params = {
     TableName: process.env.MOVIES_TABLE,
     Key: {
@@ -66,7 +69,11 @@ module.exports.update = (event, context, callback) => {
     params.ExpressionAttributeNames['#movie_duration'] = 'duration';    
     params.UpdateExpression += ' , #movie_duration = :duration'
   }
-
+  if (directorPassed) {
+    params.ExpressionAttributeValues[':director'] = data.director;
+    params.ExpressionAttributeNames['#movie_director'] = 'director';    
+    params.UpdateExpression += ' , #movie_director = :director'
+  }
   console.log(params);
 
   // update the todo in the database
