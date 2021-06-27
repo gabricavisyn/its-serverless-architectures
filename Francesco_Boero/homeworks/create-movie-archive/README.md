@@ -28,3 +28,8 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+## Soluzione
+- Punti da 1 a 4 svolti praticamente; endpoint: https://ale24cwwah.execute-api.us-east-1.amazonaws.com/dev/movies
+
+- Punto 5: trattandosi di una struttura di un pattern microservices, per creare due servizi diversi (ricerca per autore e ricerca per regista) creo due handler aggiuntivi distinti. Devono essere molto simili all'handler "get", dato che devono esguire una funzione simile: restituire parte del contenuto della tabella su dynamoDB secondo una discriminante (titolo o regista). Inoltre il file "serverless.yml" va aggiornato con le funzioni aggiunte. 
+

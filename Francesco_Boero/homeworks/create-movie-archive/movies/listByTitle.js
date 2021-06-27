@@ -3,17 +3,16 @@
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports.get = (event, context, callback) => {
-  
+module.exports.listByTitle = (event, context, callback) => {
   const params = {
     TableName: process.env.MOVIES_TABLE,
     Key: {
-      id: event.pathParameters.id,
+      title: event.pathParameters.title,
     },
   };
 
   // fetch todo from the database
-  dynamoDb.get(params, (error, result) => {
+  dynamoDb.query(params, (error, result) => {
     // handle potential errors
     if (error) {
       console.error(error);

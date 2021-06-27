@@ -37,6 +37,22 @@ functions:
           method: get
           cors: true
 
+  listByDirector:
+    handler: movies/listByDirector.listByDirector
+    events:
+      - http:
+          path: movies/{director}
+          method: get
+          cors: true
+
+  listByTitle:
+    handler: movies/listByTitle.listByTitle
+    events:
+      - http:
+          path: movies/{title}
+          method: get
+          cors: true
+
   get:
     handler: movies/get.get
     events:
