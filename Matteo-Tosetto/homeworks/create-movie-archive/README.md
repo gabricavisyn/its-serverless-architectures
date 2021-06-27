@@ -28,3 +28,9 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+Endpoints:
+  POST - https://0fgeqz5sza.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://0fgeqz5sza.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://0fgeqz5sza.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  PUT - https://0fgeqz5sza.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  DELETE - https://0fgeqz5sza.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
