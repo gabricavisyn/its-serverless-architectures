@@ -20,6 +20,10 @@ module.exports.update = (event, context, callback) => {
   if (typeof data.watched != 'boolean') {
     validationPass = false;
   }
+//validazione di director
+  if ((typeof data.director !== 'undefined' && typeof data.director !== 'string') || (typeof data.rating !== 'undefined' &&  typeof data.rating !== 'number')) {
+    validationPass = false;
+  }
 
   if (!validationPass) {
     console.error('Validation Failed');
@@ -31,6 +35,11 @@ module.exports.update = (event, context, callback) => {
     return;
   }
 
+  let directorPassed = false;
+  if (typeof data.director == 'string') {
+    directorPassed = true;
+  }
+
   let titlePassed = false;
   if (typeof data.title == 'string') {
     titlePassed = true;
@@ -39,6 +48,13 @@ module.exports.update = (event, context, callback) => {
   let durationPassed = false;
   if (typeof data.duration == 'number') {
     durationPassed = true;
+  }
+
+
+
+  let ratingPassed = false;
+  if (typeof data.rating == 'number') {
+    ratingPassed = true;
   }
 
   const params = {
@@ -54,6 +70,12 @@ module.exports.update = (event, context, callback) => {
     UpdateExpression: 'SET watched = :watched, updatedAt = :updatedAt',
     ReturnValues: 'ALL_NEW',
   };
+// validazione di director
+  if (directorPassed) {
+    params.ExpressionAttributeValues[':director'] = data.director;
+    params.ExpressionAttributeNames['#movie_director'] = 'director';    
+    params.UpdateExpression += ' , #movie_director = :director'
+  }
 
   if (titlePassed) {
     params.ExpressionAttributeValues[':title'] = data.title;
@@ -65,6 +87,14 @@ module.exports.update = (event, context, callback) => {
     params.ExpressionAttributeValues[':duration'] = data.duration;
     params.ExpressionAttributeNames['#movie_duration'] = 'duration';    
     params.UpdateExpression += ' , #movie_duration = :duration'
+  }
+
+  
+
+  if (ratingPassed) {
+    params.ExpressionAttributeValues[':rating'] = data.rating;
+    params.ExpressionAttributeNames['#movie_rating'] = 'rating';    
+    params.UpdateExpression += ' , #movie_rating = :rating'
   }
 
   console.log(params);
