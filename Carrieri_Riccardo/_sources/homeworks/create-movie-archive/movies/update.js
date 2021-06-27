@@ -13,7 +13,7 @@ module.exports.update = (event, context, callback) => {
 
   let validationPass = true;
 
-  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number')) {
+  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.director !== 'undefined' && typeof data.director !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number')) {
     validationPass = false;
   }
 
@@ -34,6 +34,11 @@ module.exports.update = (event, context, callback) => {
   let titlePassed = false;
   if (typeof data.title == 'string') {
     titlePassed = true;
+  }
+
+  let directorPassed = false;
+  if (typeof data.director == 'string') {
+    directorPassed = true;
   }
 
   let durationPassed = false;
@@ -59,6 +64,12 @@ module.exports.update = (event, context, callback) => {
     params.ExpressionAttributeValues[':title'] = data.title;
     params.ExpressionAttributeNames['#movie_title'] = 'title';    
     params.UpdateExpression += ' , #movie_title = :title'
+  }
+
+  if (directorPassed) {
+    params.ExpressionAttributeValues[':director'] = data.director;
+    params.ExpressionAttributeNames['#movie_director'] = 'director';    
+    params.UpdateExpression += ' , #movie_director = :director'
   }
 
   if (durationPassed) {
