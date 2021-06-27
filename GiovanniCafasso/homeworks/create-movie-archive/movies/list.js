@@ -8,10 +8,26 @@ module.exports.list = (event, context, callback) => {
   const params = {
     TableName: process.env.MOVIES_TABLE
   };
+  var title="";
+  var director="";
+  
+  const request = event.queryStringParameters;
+  console.log(params);
+  console.log("prova request: "+request);
 
-  //prova mia
-  //const request = event.queryStringParams;
-  //console.log("prova request: "+request);
+  if(request && request.title)
+  {
+    console.log("Titolo ricevuto: "+ request.title);
+    title=request.title;
+  }
+
+  if(request && request.director)
+  {
+    console.log("Regista ricevuto: "+ request.director);
+    director=request.director;
+  }
+
+
 
   // fetch all todos from the database
   dynamoDb.scan(params, (error, result) => {
