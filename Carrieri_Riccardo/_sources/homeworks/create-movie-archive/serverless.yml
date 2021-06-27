@@ -4,7 +4,7 @@ frameworkVersion: ">=1.1.0 <2.48.0"
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs12.x
   region: us-east-1
   profile: serverless-admin
   environment:
