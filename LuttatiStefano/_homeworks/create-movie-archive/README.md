@@ -28,3 +28,10 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+endpoints da terminale
+endpoints:
+  POST - https://d1802spyr9.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://d1802spyr9.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://d1802spyr9.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  PUT - https://d1802spyr9.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  DELETE - https://d1802spyr9.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
