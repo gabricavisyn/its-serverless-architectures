@@ -11,11 +11,6 @@ module.exports.list = (event, context, callback) => {
        
   };
 
-  //modifiche start
-  console.log(params);
-  console.log(event);
-  console.log(event.queryStringParameters);
-
   // fetch all todos from the database
   
   dynamoDb.scan(params, (error, result) => {
