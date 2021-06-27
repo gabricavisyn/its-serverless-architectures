@@ -1,0 +1,81 @@
+service: serverless-rest-api-with-dynamodb
+
+frameworkVersion: ">=1.1.0"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-1
+  profile: serverless-admin
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+
+functions:
+  create:
+    handler: portfolioNetwork/create.create
+    events:
+      - http:
+          path: portfolioNetwork
+          method: post
+          cors: true
+
+  list:
+    handler: portfolioNetwork/list.list
+    events:
+      - http:
+          path: portfolioNetwork
+          method: get
+          cors: true
+
+  get:
+    handler: portfolioNetwork/get.get
+    events:
+      - http:
+          path: portfolioNetwork/{id}
+          method: get
+          cors: true
+
+  update:
+    handler: portfolioNetwork/update.update
+    events:
+      - http:
+          path: portfolioNetwork/{id}
+          method: put
+          cors: true
+
+  delete:
+    handler: portfolioNetwork/delete.delete
+    events:
+      - http:
+          path: portfolioNetwork/{id}
+          method: delete
+          cors: true
+
+resources:
+  Resources:
+    TodosDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
