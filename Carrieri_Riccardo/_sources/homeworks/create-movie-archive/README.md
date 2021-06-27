@@ -28,3 +28,11 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+
+endpoints:
+  POST - https://3db243bc3a.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://3db243bc3a.execute-api.us-east-1.amazonaws.com/dev/movies
+  GET - https://3db243bc3a.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  PUT - https://3db243bc3a.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  DELETE - https://3db243bc3a.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+
