@@ -28,3 +28,11 @@
 
 Per dubbi domande o chiarimenti, possibilmente entro un tempo utile e non all'ultimo secondo.
 
+
+
+1 endpoint(list) https://tmgqjgv08i.execute-api.us-east-1.amazonaws.com/dev/movies
+2 endpoint(create) https://tmgqjgv08i.execute-api.us-east-1.amazonaws.com/dev/movies
+3 endpoint(delete) https://tmgqjgv08i.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+4 endpoint(get) https://tmgqjgv08i.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+5 endpoint(update) https://tmgqjgv08i.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+
