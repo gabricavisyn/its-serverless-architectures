@@ -43,16 +43,34 @@ module.exports.list = (event, context, callback) => {
       
       console.log("ci sono dei parametri");
       console.log(event.queryStringParameters.title);
-      
-      // create a response
+
+      if (event.queryStringParameters.title != null){
+        // create a response
         const response = {
           statusCode: 200,
           body: JSON.stringify(result.Items.filter(function(record){
-            return record.title==event.queryStringParameters.title | record.director == event.queryStringParameters.director
+            return record.title==event.queryStringParameters.title 
           })),
           
         };
-      callback(null, response);
+        callback(null, response);
+
+      }
+      if (event.queryStringParameters.director != null){
+         // create a response
+         const response = {
+          statusCode: 200,
+          body: JSON.stringify(result.Items.filter(function(record){
+            return record.director == event.queryStringParameters.director
+          })),
+          
+        };
+        callback(null, response);
+        
+      }
+      
+     
+      
 
     
 
