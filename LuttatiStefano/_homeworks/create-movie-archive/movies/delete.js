@@ -1,12 +1,12 @@
 'use strict';
 
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
-
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.delete = (event, context, callback) => {
+
   const params = {
-    TableName: process.env.DYNAMODB_TABLE,
+    TableName: process.env.MOVIES_TABLE,
     Key: {
       id: event.pathParameters.id,
     },
@@ -27,7 +27,7 @@ module.exports.delete = (event, context, callback) => {
 
     // create a response
     const response = {
-      statusCode: 200,
+      statusCode: 204,
       body: JSON.stringify({}),
     };
     callback(null, response);

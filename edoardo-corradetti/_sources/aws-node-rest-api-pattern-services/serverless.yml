@@ -8,8 +8,7 @@ provider:
   region: eu-central-1
   profile: serverless-admin
   environment:
-    DYN_T_TODOS: ${self:service}-${opt:stage, self:provider.stage}-todos
-    DYN_T_CONTACTS: ${self:service}-${opt:stage, self:provider.stage}-contacts
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -19,16 +18,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_TODOS}"
-    - Effect: Allow
-      Action:
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYN_T_CONTACTS}"  
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 functions:
   todosHandler:
@@ -54,29 +44,6 @@ functions:
           path: todos/{id}
           method: delete
           cors: true
-  contactsHandler:
-    handler: contacts/handler.contactshandler
-    events:
-      - http:
-          path: contacts
-          method: post
-          cors: true
-      - http:
-          path: contacts
-          method: get
-          cors: true
-      - http:
-          path: contacts/{id}
-          method: get
-          cors: true
-      - http:
-          path: contacts/{id}
-          method: put
-          cors: true          
-      - http:
-          path: contacts/{id}
-          method: delete
-          cors: true
 
 
 resources:
@@ -96,6 +63,9 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+<<<<<<< HEAD:gabricavi/_sources/aws-node-rest-api-pattern-services/serverless.yml
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+=======
         TableName: ${self:provider.environment.DYN_T_TODOS}
     ContactsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
@@ -113,3 +83,4 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYN_T_CONTACTS}   
+>>>>>>> 949eeadef9b25c0d17be4ed021c333de623d2810:edoardo-corradetti/_sources/aws-node-rest-api-pattern-services/serverless.yml
