@@ -17,7 +17,7 @@ provider:
        - "s3:*"
      Resource: "*"
   environment:
-     THUMBNAIL_SIZE: "128"
+     THUMBNAIL_SIZE: "128"  #variabile d'ambiente
 
 custom:
   bucket: gabri-s3-thumbnail-generator
