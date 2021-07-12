@@ -25,14 +25,14 @@ custom:
    dockerizePip: true
 
 functions:
-  s3-thumbnail-generator:
+  s3-thumbnail-generator: #nome che avrà la funzione su AWS
     handler: handler.s3_thumbnail_generator
-    events:
-      - s3:
-          bucket: ${self:custom.bucket}
+    events:   #possono esserci più event
+      - s3:   #s3 scatena la funzione, non api gateway
+          bucket: ${self:custom.bucket}  #gabri-s3-thumbnail-generator => è il nome del bucket
           event: s3:ObjectCreated:*
           rules:
-            - suffix: .png
+            - suffix: .png  #aggiunge suffisso .png
 
 plugins:
   - serverless-python-requirements
