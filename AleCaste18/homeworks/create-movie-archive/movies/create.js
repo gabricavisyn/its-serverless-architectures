@@ -20,7 +20,7 @@ module.exports.create = (event, context, callback) => {
     return;
   }
 
-  const { title, duration } = data;
+  const { title, duration, director } = data;
 
   const params = {
     TableName: process.env.MOVIES_TABLE,
