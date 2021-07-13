@@ -13,15 +13,18 @@ module.exports.update = (event, context, callback) => {
 
   let validationPass = true;
 
-  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number') || (typeof data.director !== 'undefined' && typeof data.director !== 'string' )) {
+  if ((typeof data.title !== 'undefined' && typeof data.title !== 'string') || (typeof data.duration !== 'undefined' &&  typeof data.duration !== 'number') || (typeof data.director !== 'undefined' && typeof data.director !== 'string' )) 
+  {
     validationPass = false;
   }
 
-  if (typeof data.watched != 'boolean') {
+  if (typeof data.watched != 'boolean') 
+  {
     validationPass = false;
   }
 
-  if (!validationPass) {
+  if (!validationPass) 
+  {
     console.error('Validation Failed');
     callback(null, {
       statusCode: 400,
@@ -42,7 +45,7 @@ module.exports.update = (event, context, callback) => {
   }
 
   let directorPassed = false;
-  if (typeof data.director == 'number') {
+  if (typeof data.director == 'string') {
     durationPassed = true;
   }
 

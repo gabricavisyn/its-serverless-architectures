@@ -8,8 +8,9 @@ module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
 
   const data = JSON.parse(event.body);
-  
-  if (typeof data.title !== 'string' || typeof data.duration !== 'number' || typeof data.director !== 'string'){
+
+  if (typeof data.title !== 'string' || typeof data.duration !== 'number' || typeof data.director !== 'string')
+  {
     console.error('Validation Failed');
     console.error(typeof data.duration);
     callback(null, {
