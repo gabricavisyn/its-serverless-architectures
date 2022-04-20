@@ -2,37 +2,41 @@
 
 const uuid = require('uuid');
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
-
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
+
   const data = JSON.parse(event.body);
-  if (typeof data.text !== 'string') {
+
+  if (typeof data.title !== 'string' || typeof data.duration !== 'number' || typeof data.director !== 'string' || typeof data.genres !== 'string') {
     console.error('Validation Failed');
+    console.error(typeof data.duration);
     callback(null, {
-      statusCode: 400,
+      statusCode: 422,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t create the todo item.',
+      body: 'Couldn\'t create the film.',
     });
     return;
   }
 
+  const { title, director, genres, duration } = data;
+
   const params = {
-    TableName: process.env.DYNAMODB_TABLE,
+    TableName: process.env.MOVIES_TABLE,
     Item: {
       id: uuid.v1(),
-      username: data.text,
-      name: data.text,
-      surname: data.text,
-      age: data.text,
-      admin: true,
+      title,
+      director,
+      genres,
+      duration,
+      watched: false,
       createdAt: timestamp,
       updatedAt: timestamp,
     },
   };
 
-  // write the PORTFOLIO'S USER to the database
+  // write the film to the database
   dynamoDb.put(params, (error) => {
     // handle potential errors
     if (error) {
@@ -40,7 +44,7 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the portolio.',
+        body: 'Couldn\'t create the film item.',
       });
       return;
     }

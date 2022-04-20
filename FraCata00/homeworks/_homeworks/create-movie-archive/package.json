@@ -5,7 +5,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.931.0",
     "uuid": "^2.0.3"
   }
 }
